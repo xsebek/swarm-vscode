@@ -16,7 +16,7 @@ let client: LanguageClient;
 export function activate(context: ExtensionContext) {
 	// The server is implemented in node
 	const serverModule : Executable = {
-		command: ".cabal/bin/swarm",
+		command: "swarm",
 		args: ["lsp"],
 		options: {detached:true, shell:true},
 	  }

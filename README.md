@@ -1,6 +1,6 @@
 # swarm-language README
 
-This VSCode extension provides a basic highlighting for the swarm programming language.
+This VSCode extension provides a basic highlighting and LSP client for the swarm programming language.
 
 ![VSCode screenshot](images/editor_debug.png)
 

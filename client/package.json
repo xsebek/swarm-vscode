@@ -4,7 +4,7 @@
 	"description": "VSCode part of the swarm language server",
 	"author": "Ondřej Šebek",
 	"license": "MIT",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "vscode",
 	"repository": {
 		"type": "git",
