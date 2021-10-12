@@ -1,0 +1,26 @@
+{
+    "name": "swarm-language",
+    "displayName": "swarm-language",
+    "description": "VSCode support for swarm (the game) programming language.",
+    "version": "0.0.1",
+    "repository": {"url": "https://github.com/xsebek/swarm-vscode"},
+    "engines": {
+        "vscode": "^1.61.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "swarm",
+            "aliases": ["swarm", "swarm"],
+            "extensions": [".sw"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "swarm",
+            "scopeName": "source.swarm",
+            "path": "./syntaxes/swarm.tmLanguage.json"
+        }]
+    }
+}
