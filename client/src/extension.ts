@@ -1,10 +1,13 @@
 import * as path from 'path';
-import { workspace, ExtensionContext } from 'vscode';
+import * as process from 'process';
+import { workspace, ExtensionContext, DebugAdapterExecutable } from 'vscode';
 
 import {
+	Executable,
 	LanguageClient,
 	LanguageClientOptions,
 	ServerOptions,
+	TextDocumentSyncKind,
 	TransportKind
 } from 'vscode-languageclient/node';
 
@@ -12,12 +15,15 @@ let client: LanguageClient;
 
 export function activate(context: ExtensionContext) {
 	// The server is implemented in node
-	const serverModule = ".cabal/bin/swarm";
+	const serverModule : Executable = {
+		command: ".cabal/bin/swarm",
+		args: ["lsp"],
+		options: {detached:true, shell:true},
+	  }
+	
 
-	const serverOptions: ServerOptions = {
-		run: { module: serverModule, transport: TransportKind.pipe },
-		debug: { module: serverModule, transport: TransportKind.pipe}
-	};
+	var serverOptions: ServerOptions = serverModule;
+	TextDocumentSyncKind
 
 	// Options to control the language client
 	const clientOptions: LanguageClientOptions = {
